@@ -1,0 +1,227 @@
+[
+  {
+    "titulo": "O que você procura?",
+    "campos": [
+      {
+        "id": "tipo_solicitacao",
+        "label": "Como podemos ajudar?",
+        "tipo": "radio",
+        "obrigatorio": true,
+        "opcoes": [
+          "Banho e tosa",
+          "Estética e cuidados",
+          "Produtos para meu pet",
+          "Outra dúvida"
+        ]
+      },
+      {
+        "id": "nome_tutor",
+        "label": "Seu nome",
+        "tipo": "text",
+        "autocomplete": "given-name",
+        "obrigatorio": true,
+        "limite_caracteres": 80
+      }
+    ]
+  },
+  {
+    "titulo": "Sobre seu pet",
+    "exibir_quando": "A solicitação for de banho e tosa ou estética e cuidados.",
+    "campos": [
+      {
+        "id": "nome_pet",
+        "label": "Nome do pet",
+        "tipo": "text",
+        "obrigatorio": true,
+        "limite_caracteres": 80
+      },
+      {
+        "id": "especie",
+        "label": "Qual é a espécie?",
+        "tipo": "select",
+        "obrigatorio": true,
+        "opcoes": [
+          "Cão",
+          "Gato",
+          "Outra"
+        ],
+        "ajuda": "A equipe confirmará se atende a espécie informada."
+      },
+      {
+        "id": "especie_outra",
+        "label": "Qual espécie?",
+        "tipo": "text",
+        "obrigatorio": true,
+        "exibir_quando": "Espécie igual a Outra."
+      },
+      {
+        "id": "raca",
+        "label": "Raça",
+        "tipo": "text",
+        "obrigatorio": false,
+        "ajuda": "Pode informar sem raça definida ou não sei."
+      },
+      {
+        "id": "idade",
+        "label": "Idade aproximada",
+        "tipo": "text",
+        "obrigatorio": false
+      },
+      {
+        "id": "peso",
+        "label": "Peso aproximado em kg",
+        "tipo": "number",
+        "obrigatorio": false,
+        "min": 0.1,
+        "step": 0.1
+      },
+      {
+        "id": "porte",
+        "label": "Porte aproximado",
+        "tipo": "select",
+        "obrigatorio": false,
+        "opcoes": [
+          "Pequeno",
+          "Médio",
+          "Grande",
+          "Não sei"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Detalhes do atendimento",
+    "exibir_quando": "A solicitação for de banho e tosa ou estética e cuidados.",
+    "campos": [
+      {
+        "id": "cuidado_desejado",
+        "label": "Qual cuidado você gostaria de consultar?",
+        "tipo": "select",
+        "obrigatorio": true,
+        "opcoes": [
+          "Banho",
+          "Banho e tosa",
+          "Consultar tosa bebê",
+          "Preciso de orientação",
+          "Outro cuidado"
+        ],
+        "ajuda": "As opções representam seu interesse. A equipe confirmará os serviços disponíveis."
+      },
+      {
+        "id": "pelagem",
+        "label": "Como está a pelagem?",
+        "tipo": "select",
+        "obrigatorio": false,
+        "opcoes": [
+          "Curta",
+          "Média",
+          "Longa",
+          "Com nós ou embaraçada",
+          "Não sei informar"
+        ]
+      },
+      {
+        "id": "primeira_visita",
+        "label": "É a primeira visita à Babaloo?",
+        "tipo": "radio",
+        "obrigatorio": false,
+        "opcoes": [
+          "Sim",
+          "Não"
+        ]
+      },
+      {
+        "id": "comportamento",
+        "label": "Como seu pet costuma reagir ao banho e à tosa?",
+        "tipo": "select",
+        "obrigatorio": false,
+        "opcoes": [
+          "Tranquilo",
+          "Ansioso ou com medo",
+          "Pode reagir ao manuseio",
+          "Ainda não sei"
+        ]
+      },
+      {
+        "id": "cuidados_especiais",
+        "label": "Há alergias, sensibilidade ou algum cuidado importante?",
+        "tipo": "textarea",
+        "obrigatorio": false,
+        "limite_caracteres": 600,
+        "ajuda": "Informe apenas o necessário para a equipe avaliar o atendimento."
+      },
+      {
+        "id": "data_preferida",
+        "label": "Data de preferência",
+        "tipo": "date",
+        "obrigatorio": false,
+        "validacao": "Não aceitar datas anteriores ao dia atual no fuso America/Sao_Paulo.",
+        "ajuda": "Esta é uma preferência, não uma reserva."
+      },
+      {
+        "id": "periodo",
+        "label": "Período de preferência",
+        "tipo": "select",
+        "obrigatorio": false,
+        "opcoes": [
+          "Manhã",
+          "Tarde",
+          "Sem preferência"
+        ],
+        "ajuda": "Sujeito ao horário de funcionamento e à disponibilidade."
+      }
+    ]
+  },
+  {
+    "titulo": "Produtos",
+    "exibir_quando": "A solicitação for de produtos para meu pet.",
+    "campos": [
+      {
+        "id": "categoria_produto",
+        "label": "O que você procura?",
+        "tipo": "select",
+        "obrigatorio": true,
+        "opcoes": [
+          "Ração ou alimentação",
+          "Petiscos",
+          "Caminha",
+          "Acessórios",
+          "Transportador",
+          "Higiene",
+          "Outro produto"
+        ]
+      },
+      {
+        "id": "descricao_produto",
+        "label": "Conte qual produto você precisa",
+        "tipo": "textarea",
+        "obrigatorio": true,
+        "limite_caracteres": 600,
+        "ajuda": "Se souber, informe marca, tamanho, peso da embalagem e quantidade. A equipe confirmará estoque e preço."
+      }
+    ]
+  },
+  {
+    "titulo": "Sua dúvida",
+    "exibir_quando": "A solicitação for Outra dúvida.",
+    "campos": [
+      {
+        "id": "duvida",
+        "label": "Como podemos ajudar?",
+        "tipo": "textarea",
+        "obrigatorio": true,
+        "limite_caracteres": 1000
+      }
+    ]
+  },
+  {
+    "titulo": "Revise e envie",
+    "conteudo": [
+      "Mostre um resumo legível apenas com as respostas aplicáveis.",
+      "Ofereça botões para editar as etapas.",
+      "Explique que as respostas serão incluídas em uma mensagem no WhatsApp e que o usuário deverá tocar em enviar.",
+      "Reforce que preços, serviços e agendamento dependem da confirmação da equipe."
+    ],
+    "cta": "Continuar no WhatsApp"
+  }
+]
